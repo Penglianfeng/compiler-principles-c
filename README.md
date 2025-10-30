@@ -55,9 +55,9 @@ gcc Untitled-1.c -o lexer.exe
 - 标点：如 (){}[];,.:?&|^~# 等按单字符输出。
 - 非法字符：如 @、$、` 等直接产生 ERROR。
 
-### 测试集解析：为什么会得到这些结果
+### 测试集解析
 
-下列说明帮助你对照输出理解“为什么会这样”。括号内为典型 Token 形式：(种类, "词素", 行, 列)。
+下列说明帮助对照输出理解。括号内为典型 Token 形式：(种类, "词素", 行, 列)。
 
 1) 综合测试：`test_sample.c`
 - 关键字与标识符：`int num` → (KEYWORD,"int"), (IDENT,"num")。
@@ -111,7 +111,7 @@ gcc Untitled-2.c -o nfa_to_dfa.exe
 .\nfa_to_dfa.exe
 ```
 
-### 解读
+### 解释
 1) Identifier NFA：
 	 - 状态少且可能含不确定性（本实现用“字母=0、数字=1”的抽象字母表，q0 在 letter→q1，q1 在 letter/digit 自环）。
 2) DFA before minimization：
